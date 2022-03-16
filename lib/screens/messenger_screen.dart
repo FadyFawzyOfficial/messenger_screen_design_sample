@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:messenger_screen_design_sample/widgets/circle_image_with_name.dart';
 
 import '../widgets/app_bar_widgets/app_bar_action_button.dart';
 import '../widgets/app_bar_widgets/app_bar_title.dart';
@@ -31,8 +32,25 @@ class MessengerScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
-          children: const [
-            SearchField(),
+          children: [
+            const SearchField(),
+            const SizedBox(height: 16),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: const [
+                  CircleImageWithName(),
+                  SizedBox(width: 16),
+                  CircleImageWithName(),
+                  SizedBox(width: 16),
+                  CircleImageWithName(),
+                  SizedBox(width: 16),
+                  CircleImageWithName(),
+                  SizedBox(width: 16),
+                  CircleImageWithName(),
+                ],
+              ),
+            ),
           ],
         ),
       ),
