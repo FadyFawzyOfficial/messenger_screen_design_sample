@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../widgets/app_bar_widgets/app_bar_action_button.dart';
 import '../widgets/app_bar_widgets/app_bar_title.dart';
+import '../widgets/search_field.dart';
 
 class MessengerScreen extends StatelessWidget {
   const MessengerScreen({Key? key}) : super(key: key);
@@ -25,6 +26,15 @@ class MessengerScreen extends StatelessWidget {
             onPressed: () {},
           ),
         ],
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: const [
+            SearchField(),
+          ],
+        ),
       ),
     );
   }
