@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../widgets/app_bar_widgets/app_bar_action_button.dart';
 import '../widgets/app_bar_widgets/app_bar_title.dart';
-import '../widgets/circle_image_with_name.dart';
-import '../widgets/individual_chat.dart';
+import '../widgets/chat_item.dart';
 import '../widgets/search_field.dart';
+import '../widgets/story_item.dart';
 
 class MessengerScreen extends StatelessWidget {
   const MessengerScreen({Key? key}) : super(key: key);
@@ -36,35 +36,21 @@ class MessengerScreen extends StatelessWidget {
           children: [
             const SearchField(),
             const SizedBox(height: 16),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: const [
-                  CircleImageWithName(),
-                  SizedBox(width: 16),
-                  CircleImageWithName(),
-                  SizedBox(width: 16),
-                  CircleImageWithName(),
-                  SizedBox(width: 16),
-                  CircleImageWithName(),
-                  SizedBox(width: 16),
-                  CircleImageWithName(),
-                ],
+            SizedBox(
+              height: 108,
+              child: ListView.separated(
+                itemCount: 5,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (_, index) => const StoryItem(),
+                separatorBuilder: (_, index) => const SizedBox(width: 16),
               ),
             ),
+            const SizedBox(height: 24),
             Expanded(
-              child: SingleChildScrollView(
-                child: Column(
-                  children: const [
-                    IndividualChat(),
-                    IndividualChat(),
-                    IndividualChat(),
-                    IndividualChat(),
-                    IndividualChat(),
-                    IndividualChat(),
-                    IndividualChat(),
-                  ],
-                ),
+              child: ListView.separated(
+                itemCount: 10,
+                itemBuilder: (_, index) => const ChatItem(),
+                separatorBuilder: (_, index) => const SizedBox(height: 16),
               ),
             ),
           ],

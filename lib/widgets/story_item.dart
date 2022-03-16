@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'circle_image.dart';
 
-class CircleImageWithName extends StatelessWidget {
-  const CircleImageWithName({
+class StoryItem extends StatelessWidget {
+  const StoryItem({
     Key? key,
   }) : super(key: key);
 
