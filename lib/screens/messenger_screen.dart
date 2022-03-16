@@ -31,29 +31,31 @@ class MessengerScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            const SearchField(),
-            const SizedBox(height: 16),
-            SizedBox(
-              height: 108,
-              child: ListView.separated(
-                itemCount: 5,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (_, index) => const StoryItem(),
-                separatorBuilder: (_, index) => const SizedBox(width: 16),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              const SearchField(),
+              const SizedBox(height: 16),
+              SizedBox(
+                height: 108,
+                child: ListView.separated(
+                  itemCount: 5,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (_, index) => const StoryItem(),
+                  separatorBuilder: (_, index) => const SizedBox(width: 16),
+                ),
               ),
-            ),
-            const SizedBox(height: 24),
-            Expanded(
-              child: ListView.separated(
+              const SizedBox(height: 24),
+              ListView.separated(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
                 itemCount: 10,
                 itemBuilder: (_, index) => const ChatItem(),
                 separatorBuilder: (_, index) => const SizedBox(height: 16),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
