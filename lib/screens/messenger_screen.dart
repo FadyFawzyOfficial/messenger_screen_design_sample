@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:messenger_screen_design_sample/widgets/circle_image_with_name.dart';
 
 import '../widgets/app_bar_widgets/app_bar_action_button.dart';
 import '../widgets/app_bar_widgets/app_bar_title.dart';
+import '../widgets/circle_image_with_name.dart';
+import '../widgets/individual_chat.dart';
 import '../widgets/search_field.dart';
 
 class MessengerScreen extends StatelessWidget {
@@ -49,6 +50,21 @@ class MessengerScreen extends StatelessWidget {
                   SizedBox(width: 16),
                   CircleImageWithName(),
                 ],
+              ),
+            ),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: const [
+                    IndividualChat(),
+                    IndividualChat(),
+                    IndividualChat(),
+                    IndividualChat(),
+                    IndividualChat(),
+                    IndividualChat(),
+                    IndividualChat(),
+                  ],
+                ),
               ),
             ),
           ],
