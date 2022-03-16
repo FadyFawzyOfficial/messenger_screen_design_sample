@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'screens/messenger_screen.dart';
+
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -7,9 +9,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Container(),
+      home: MessengerScreen(),
     );
   }
 }
